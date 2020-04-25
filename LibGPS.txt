@@ -1,7 +1,8 @@
 ## Title: LibGPS
 ## Author: sirinsidiator & votan
-## Version: 3.0.0
-## AddOnVersion: 30
+## Contributors: Shinni
+## Version: 3.0.1
+## AddOnVersion: 37
 ## APIVersion: 100030 100031
 ## IsLibrary: true
 ## DependsOn: LibMapPing>=900 LibDebugLogger LibChatMessage

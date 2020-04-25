@@ -5,7 +5,7 @@
 Set version to 30 because that was it is in the txt file and this
 is the current version just a compatibility file
 ]]--
-local libName, libVersion = "LibGPS2", 30
+local libName, libVersion = "LibGPS2", 37
 local lib
 if(not LibStub) then
     lib = {}
