@@ -1,11 +1,21 @@
 -- LibGPS3 & its files © sirinsidiator                          --
 -- Distributed under The Artistic License 2.0 (see LICENSE)     --
 ------------------------------------------------------------------
+--[[
+Set version to 30 because that was it is in the txt file and this
+is the current version just a compatibility file
+]]--
+local libName, libVersion = "LibGPS2", 30
+local lib
+if(not LibStub) then
+    lib = {}
+else
+    lib = LibStub:NewLibrary(libName, libVersion)
+    if not lib then
+        return -- already loaded and no upgrade necessary
+    end
+end
 
-local MAJOR, MINOR = "LibGPS2", 22
-local lib = LibStub and LibStub:NewLibrary(MAJOR, MINOR)
-assert(lib, "LibGPS2 compatibility layer was loaded more than once. Please ensure that its files are not included from other addons.")
-lib = lib or {}
 LibGPS2 = lib
 
 local libv3 = LibGPS3
