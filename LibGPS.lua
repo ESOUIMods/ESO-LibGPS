@@ -3,7 +3,14 @@
 ------------------------------------------------------------------
 local libName, libVersion = "LibGPS2", 21
 local lib
-lib = {}
+if(not LibStub) then
+    lib = {}
+else
+    lib = LibStub:NewLibrary(libName, 21)
+    if not lib then
+        return -- already loaded and no upgrade necessary
+    end
+end
 
 local LMP = LibMapPing
 
@@ -530,7 +537,7 @@ function lib:GlobalToLocal(x, y)
 end
 
 --- Converts the given map coordinates on the specified zone map into coordinates on the Tamriel map.
---- This method is useful if you want to convert global positions from the old LibGPS2 version into the new format.
+--- This method is useful if you want to convert global positions from the old LibGPS version into the new format.
 --- Returns x and y on the world map and the mapIndex of the parent zone
 --- or nil if the measurements of the zone map are not available.
 function lib:ZoneToGlobal(mapIndex, x, y)
